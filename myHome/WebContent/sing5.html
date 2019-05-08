@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="EUC-KR">
+		<title>싱싱 주식회사 홈페이지</title>
+	</head>
+	<body>
+		<center>
+			<h1>싱싱 주식회사</h1> <!-- h: 헤더, 1~6 숫자가 작을 수록 글자 커짐 -->
+			<br><br><br>
+			<font size="4">
+			<a href="sing1.html">회사소개</a> | 
+			<a href="sing2.html">회사제품</a> | 
+			<a href="sing3.html">회사구성원</a> | 
+			<a href="sing4.html">회사오시는길</a> | 
+			<a href="sing5.html">고객센터</a>
+			</font>	<br><br>
+			<hr color="blue" width="500" size="5"> <!-- 가로줄 그리기 -->
+			<!-- p: paragraph 문단 -->
+			<table border="2" width="500" bordercolor="green"> <!-- 테이블 테두리 두께, 넓이, 테두리 색상 -->
+				<tr align="center"> <!-- align: 정렬 -->
+					<th bgcolor="lime" height="50" width="100">학기</th> <!-- th: 테이블 헤더 -->
+					<th bgcolor="lime" width="100">국어</th> 
+					<th bgcolor="lime" width="100">수학</th>
+					<th bgcolor="lime" width="100">영어</th>
+					<th bgcolor="lime" width="100">체육</th>
+				</tr>
+				<tr align="center" height="50">
+					<td>1학기</td>
+					<td>100점</td>
+					<td>88점</td>
+					<td>90점</td>				
+					<td rowspan="2">보류</td>	 <!-- rowspan: 행 병합 개수 -->		
+				</tr>
+				<tr align="center" height="50">
+					<td>2학기</td>
+					<td>55점</td>
+					<td>77점</td>
+					<td>66점</td>				
+				</tr>
+				<tr align="center" height="50">
+					<td>비고</td>
+					<td colspan="4" bgcolor="gray">
+						<font color="white"><b> <!-- colspan: 열 병합 개수 -->
+							총 성적은 1학기, 2학기 평균으로 산정 
+						</b></font>		
+					</td>											
+				</tr>
+			</table><br>
+			<table border="2" width="500">
+				<tr align="center">
+					<th></th>
+					<th colspan="2">1학기</th>
+					<th colspan="2">2학기</th>
+				</tr>
+				<tr align="center">
+					<td rowspan="2" height="90">성취도</td>
+					<td height="30">영어1</td>
+					<td>수학1</td>
+					<td>영어2</td>
+					<td>수학2</td>
+				</tr>
+				<tr align="center">
+					<td>100</td>
+					<td>88</td>
+					<td>99</td>
+					<td>77</td>
+				</tr>
+			</table>			
+			<hr color="red" width="500" size="5"> <!-- 가로줄 그리기 -->	
+			<font color="black" size="3"> <br>
+				싱싱 주식회사<br>
+				주소: 서울시 강남구 강남대로 4가<br>
+				연락처: 02) 456-7894<br>
+				이메일: <a href="mailto:admin@singsing.co.kr">admin@singsing.co.kr</a><br>
+			</font>
+		</center>
+	</body>
+</html>

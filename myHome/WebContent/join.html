@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="EUC-KR">
+		<title> 회원 가입 </title>
+	</head>
+	<body bgcolor="pink">
+		<center>
+			<h3>회원가입화면입니다.</h3>
+			<!-- action:값을 전달할 대상 설정, method:전달(요청)방식 -->
+			<form action="dbprocess.py" method="post"> 
+			<table width="500">
+				<tr align="center">
+					<td width="150" bgcolor="yellow">아이디</td>
+					<td bgcolor="green">
+						<!-- input: 입력칸, type:입력형식, name:변수명, size: 입력칸 크기 -->
+						<input type="text" name="id" size="40">					
+					</td>
+				</tr>			
+				<tr align="center">
+					<td width="150" bgcolor="yellow">비밀번호</td>
+					<td bgcolor="green">
+						<input type="text" name="password" size="40">					
+					</td>
+				</tr>			
+				<tr align="center">
+					<td width="150" bgcolor="yellow">이름</td>
+					<td bgcolor="green">
+						<input type="text" name="name" size="40">					
+					</td>
+				</tr>			
+				<tr align="center">
+					<td width="150" bgcolor="yellow">연락처</td>					
+					<td bgcolor="green">
+						<select name="com"> <!-- 콤보상자 -->
+							<!-- 선택목록 value:실제값, selected: 초기값, 태그사이 글자: 표시값-->
+							<option value="010 selected">010</option> 
+							<option value="011">011</option>
+							<option value="016">016</option>
+							<option value="017">017</option>
+							<option value="018">018</option>
+							<option value="019">019</option>
+						</select>
+						<input type="text" name="tel" size="30">					
+					</td>
+				</tr>			
+				<tr align="center">
+					<td width="150" bgcolor="yellow">성별</td>
+					<td bgcolor="green">
+						<input type="radio" name="gender">남	<!-- radio:라디오 버튼 -->	
+						<input type="radio" name="gender">여					
+					</td>
+				</tr>			
+				<tr align="center">
+					<td width="150" bgcolor="yellow">취미</td>
+					<td bgcolor="green">
+						<input type="checkbox" name="hobby">운동 <!-- checkbox:체크박스 -->			
+						<input type="checkbox" name="hobby">독서			
+						<input type="checkbox" name="hobby">등산			
+					</td>
+				</tr>			
+				<tr align="center">
+					<td colspan="2">
+						<input type="submit" value="회원가입">	<!-- submit:버튼, value:표시값 -->
+						<!-- type="number":스핀박스 -->		
+					</td>
+				</tr>	
+			</table>	
+			</form>	
+		</center>
+	</body>
+</html>
