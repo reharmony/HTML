@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>자동차 정보</title>
+</head>
+<body>
+	<center>
+	<h3>자동차정보</h3>
+	<table border="1" width="500"> <!-- 메뉴바 -->
+		<tr align="center">
+			<td><a href="index.html">메인페이지</td>
+			<td bgcolor="yellow"><a href="join.html">친구추가</td>
+			<td><a href="images.html">자동차 사진</td>
+			<td><a href="movies.html">자동차 영상</td>
+			<td><a href="musics.html">음악감상</td>
+		</tr>
+	</table>
+	<h3>친구 추가 하기</h3>
+	<form action="friend.py" method="post"> <!-- 정보입력 폼 -->
+	<table width="400" height="150">
+		<tr align="right"> <!-- 이름 입력 부분 -->
+			<td>이름</td> 
+			<td width="10"></td>	
+			<td align="left">
+				<input type="text" name="name" size="40">
+			</td>
+		</tr>
+		<tr align="right"> <!-- 연락처 입력 부분 -->
+			<td>연락처</td> 
+			<td width="10"></td>
+			<td align="left">
+				<select name="com">
+					<option value="010">010
+					<option value="011">011
+					<option value="016">016
+					<option value="017">017
+					<option value="018">018
+					<option value="019">019
+				</select>
+				<input type="text" name="name" size="32">
+			</td>
+		</tr>
+		<tr align="right"> <!-- 성별 선택 부분 -->
+			<td>성별</td>
+			<td width="10"></td>
+			<td align="left">
+				<input type="radio" name="gender">남자
+				<input type="radio" name="gender">여자
+			</td>
+		</tr>
+		<tr align="center">
+			<td colspan="3">
+				<input type="submit" value="친구 추가"> <!-- 전송 버튼 -->
+			</td>
+		</tr>
+	</table>
+	</form>
+	</center>
+</body>
+</html>
