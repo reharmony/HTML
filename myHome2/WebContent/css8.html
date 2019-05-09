@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>CSS연습</title>
+		<!-- 내부 스타일 시트 -->
+		<style type="text/css"> /* text타입 중에서 css 스타일을 쓰겠다. */
+			/* 선택자 + 속성 정의 */
+			#total {
+				width: 1000px;
+				height: 1500px;
+				text-align: center;
+			}
+			
+			#top {
+				padding-top: 10px;
+				padding-left: 250px;
+				height: 100px;
+				background: #d3f2d0;
+				text-align: center;
+				vertical-align: middle;
+				dispaly: table-cell;
+			}
+		
+			#top li {
+				height: 30px;
+				list-style: none;
+				float: left; 
+				padding-left: 15px;
+				padding-right: 15px;
+				padding-top: 5px;
+				text-align: center;
+				vertical-align: middle;
+			}
+			
+			#top li:first-child {
+				border-radius:10px 0px 0px 10px; /* 좌상단 모서리부터 시계방향 */
+			}
+			
+			#top li:last-child {
+	 			border-radius: 0px 10px 10px 0px
+			}
+			
+			#top li:nth-child(2n+1) {
+				background-color: #149b0a;
+			}
+			
+			#top li:nth-child(2n) {
+				background-color: #bbf7b7;
+			}
+			
+			#top2 {
+				top: 5px;
+				right: 5px;
+				position: fixed; /* 스크롤 움직여도 고정 */
+				text-align: left;
+				font: 궁서 20px bold;
+				padding-left: 50px;
+				width: 200px;
+				height: 100px;
+				background-color: black;
+				color: yellow;
+				border-top: 5px solid aqua;
+				border-bottom: 10px double yellow;
+				border-radius: 100px 10px;
+				box-shadow: 10px;
+			}
+			
+			#content {
+				height: 300px;
+				vertical-align: middle;
+				background-color: yellow;
+			}
+			
+			a { 
+				color: black;
+				text-decoration: none; /* 링크에서 밑줄 위치 조정 삭제 등의 데코레이션 설정 */
+			}
+			
+			#bottom{
+				background-color: skyblue;
+				text-align: center;
+			}
+			
+			#bottom ul {
+				width: 300px;
+				margin-left: auto;
+				margin-right: auto;
+			}
+						
+			#company{
+				background-color: pink;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="total">
+			<div id="top";>
+				<ul>
+					<li><a href="css9.html">회사소개</a></li>
+					<li><a href="css10.html">회사제품</a></li>
+					<li><a href="css11.html">게시판</a></li>
+					<li><a href="css12.html">회사연락처</a></li>
+				</ul>
+			</div>	
+			<div id="top2">
+				<center>상담 채팅</center><br>
+				상담원이 부재중입니다.
+			</div>	
+			<div id="content">
+				<video src="media/rabbit.mp4" autoplay="autoplay" loop="loop"></video>
+				<video src="media/rabbit.mp4" autoplay="autoplay" loop="loop"></video>
+				<video src="media/rabbit.mp4" autoplay="autoplay" loop="loop"></video>
+			</div>
+	
+			<div id="bottom">
+			우리 회사는
+				<ul type="none">
+					<li>점심 식사 제공됩니다.</li>
+					<li>숙식 제공됩니다.</li>
+					<li>보너스가 지급됩니다.</li>
+				</ul>
+			</div>
+			<div id="company">KG IT BANK 주식회사 (주)</div>
+		</div>
+	</body>
+</html>

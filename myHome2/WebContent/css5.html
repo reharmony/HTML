@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>CSS연습</title>	
+		<style type="text/css"> /* text타입 중에서 css 스타일을 쓰겠다. */
+			div h2 { /* div 밑에 있는 h2를 선택 */
+				color: red;
+			}
+			
+			h2 {
+				color: green;
+				background-color: pink;
+			}
+			
+			div > h2 > tel { /* div 밑 h2 밑에 있는 tel을 선택 */
+				color:white;
+			}
+			
+			div tel { /* 꺽쇠를 쓰지 않으면 하위의 하위까지 모두 적용 */
+				background-color: gold;
+			}
+		
+			div > tel { /* 꺽쇠 쓰면 바로 밑만 적용 */
+				background-color: silver;	
+			}
+			</style>
+	</head>
+	<body>
+		<div>
+			<tel>999-8888-7777</tel> <!-- tel:문법에 없는 임의의 태그  -->
+			<h2>나는 부엌에 있는 재료들 위
+				<tel>444-5555-6666</tel>
+			</h2>
+			<ul>
+				<li>감자</li>
+				<li>고구마</li>
+				<li>양파</li>
+				<li>레몬</li>
+			</ul>
+		</div>		
+		<h2>나는 부엌에 있는 재료들 아래</h2>
+		<h3>
+			<tel>011-123-4567</tel>
+		</h3>
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
