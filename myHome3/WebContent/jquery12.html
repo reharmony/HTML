@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript" src="jquery-3.4.1.min.js"></script>
+		<script type="text/javascript">
+			var password = "1234"
+			$(function() { // DOM 트리 읽어오기
+				$("#deg").keyup(function() {
+					var deg = $("#deg").val();
+					if (deg <= 15) {
+						$("#degck").css("color","blue");
+						$("#degck").text("너무 추워요.");
+					} else if (deg < 30 && deg > 15) {
+						$("#degck").css("color","green");
+						$("#degck").text("적당한 온도네요.");										
+					} else if (deg >=30) {
+						$("#degck").css("color","red");
+						$("#degck").text("너무 더워요.");
+					} else if (deg == "") {
+						$("#degck").css("color","red");
+						$("#degck").text("sdfsdf.");
+					} else {
+						$("#degck").css("color","purple");
+						$("#degck").text("숫자로 입력해주세요.");	
+					} 
+				});
+				$("#pw").keyup(function() {
+					var pw = $("#pw").val();
+					if (pw == password){
+						$("#pwck").css("color","green");
+						$("#pwck").text("올바른 비밀번호 입니다.");					
+					} else {
+						$("#pwck").css("color","red");
+						$("#pwck").text("비밀번호가 다릅니다.");
+					}
+				});
+			});
+		</script>
+	</head>
+	<body>	
+		오늘의 온도 입력: <input type="text" id="deg" placeholder="섭씨온도"><div id="degck"></div>
+		<tr> 비밀번호 입력: <input type="password" id="pw" placeholder="4자리 이상"><div id="pwck"></div>
+	</body>
+</html>

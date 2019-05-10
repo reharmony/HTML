@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript" src="jquery-3.4.1.min.js"></script>
+		<script type="text/javascript">
+			$(function() { // DOM 트리 읽어오기
+				Date.prototype.toDateInputValue = (function() { // 오늘 날짜 자동으로 입력해주는 함수
+				      var local = new Date(this); 
+				      local.setMinutes(this.getMinutes() - this.getTimezoneOffset()); 
+				      return local.toJSON().slice(0,10); 
+				 }); 
+				 document.getElementById('date').value = new Date().toDateInputValue();
+				$("#button").click(function() { // 버튼 클릭시 함수 실행
+					$("#input").load("diary.txt"); // 파일 불러오기
+					$(document).ready(); // 여기까지 DOM트리 다시 읽어오기
+					var data = $("#input").text(); // 아이디가 input인 태그의 내용 가져오기
+					$("#content").val(data); // 아이디가 content인 태그의 내용을 data변수의 내용으로 변경					
+				});
+				
+				 
+			});
+		</script>
+	</head>
+	<body>
+		<h3>읽어온 내용</h3>
+		<hr color="red">
+		<div id="input"></div><br>
+		<h3>서버로 전송될 내용</h3>
+		<hr color="red">		
+		<!-- form: action에 써있는 주소로 입력 내용 전송, method에 전송 방식 지정(get:노출, post:숨김)-->
+		<form action="diary.jsp" method="get">
+			<!-- id값은 제이쿼리에서 사용, name 값은 파이썬(받는곳)에서 사용 -->
+			날짜:  <input id="date" type="date" name="date" required="required"><br><br> 
+			제목 <br><input id="title" type="text" name="title" size="69" required="required"><br><br> 						
+			내용 <br><textarea id="content" name="content" cols="70" rows="20" required="required"></textarea><br><br> <!-- textarea:장문 텍스트 입력창 -->			
+			<input id="button" type="submit" value="일기 등록"> <!-- submit:버튼 -->
+		</form>
+	</body>
+</html>

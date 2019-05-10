@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript" src="jquery-3.4.1.min.js"></script>
+		<script type="text/javascript">
+			$(function() { // DOM 트리 읽어오기
+			    var list = ["사과", "바나나", "메론"]; // 파이썬의 리스트 = 자바/자바스크립트의 배열
+				for(var i=0; i < 3; i++){
+					alert(list[i]);
+				}
+				var food = [];
+				for (var i=0; i<3; i++){
+					food[i] = prompt("먹고 싶은 음식을 입력"); // 입력 메세지 창
+				}
+				for (var i=0; i<3; i++){
+					alert(food[i]); // 출력 메세지 창
+				}
+			});
+		</script>
+	</head>
+	<body>	
+
+	
+		<h3></h3>
+	</body>
+</html>

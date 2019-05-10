@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="EUC-KR">
+		<title>Insert title here</title>
+		<script type="text/javascript" src="jquery-3.4.1.min.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				var puppy = $("img").attr("src"); // img태그의 src속성 값 추출
+				$("#p1").text(puppy); // id
+				
+				var url = $("#p2").text(); // id가 p2인 태그의 text 추출
+				$("a").attr("href",url); // a태그의 href값을 url변수의 값으로 변경
+				
+				var p3 = $("#p3").text();
+				$("h3").text(p3);			
+				
+				var p4 = $("#p4").text();
+				$("a").text(p4);
+				
+				var alt = $("img[alt='me']").attr("src"); // img태그 중 alt속성 값이 me인 태그의 src속성 값을 추출				
+				$("#p1").text(alt);
+				
+				$("img[alt='me']").attr("width", 100); // = 풀네임, attr에서 없는 속성이면 그 속성이 추가됨
+				$("img[alt^='me']").attr("width", 100); // ^= 시작 글자
+				$("img[alt$='jpg']").attr("width", 100); //  $= 끝 글자
+				/* $("img").removeAttr("src"); */ // 속성 삭제
+				
+			});
+		</script>
+	</head>
+	<body>
+		<img src="img/puppy.jpg" alt="좋아하는 강아지"><br>
+		<img src="img/puppy.jpg" alt="me"><br>
+		<a href="url insert">url을 입력하세요.</a>
+		<h3>오늘은 제이쿼리 첫날</h3>
+		<p id="p1">댕댕이 이미지 파일명</p>
+		<p id="p2">http://www.naver.com</p>
+		<p id="p3">제이쿼리 첫날입니다.</p>
+		<p id="p4">네번째 p태그</p>
+	</body>
+</html>

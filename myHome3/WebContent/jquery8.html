@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript" src="jquery-3.4.1.min.js"></script>
+		<script type="text/javascript">
+			var food = ["apple","banana","melon"];
+			var like = ["apple", "melon", "watermelon"];
+			var dislike = ["mango", "sea-food"];
+			var count = 0;
+			$(function() { // DOM 트리 읽어오기
+				$("#like").click(function() {
+					alert("내가 좋아하는 음식은 " + like + "입니다.")
+				});
+				$("#dislike").click(function() {
+					alert("내가 싫어하는 음식은 " + dislike + "입니다.")
+				});
+				$("#all").click(function() {
+					alert("내가 좋아하는 음식은 " + like + "이고, 싫어하는 음식은 " + dislike + "입니다.")
+				});				
+				$("#countup").click(function() {
+					count = count + 1					
+					$("h3").text("현재 카운트: " + count);
+				});
+				$("#countdown").click(function() {
+					count = count - 1					
+					$("h3").text("현재 카운트: " + count);
+				});
+			});
+		</script>
+	</head>
+	<body>	
+		<input id="like" type="submit" value="내가 좋아하는 음식">
+		<input id="dislike" type="submit" value="내가 싫어하는 음식">
+		<input id="all" type="submit" value="두 가지 다">
+		<input id="countup" type="submit" value="카운트 증가">
+		<input id="countdown" type="submit" value="카운트 감소">
+		<h3></h3>
+	</body>
+</html>

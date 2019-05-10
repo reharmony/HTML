@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript" src="jquery-3.4.1.min.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				/* $("p").text($("h1").text()); */
+		/* 		var h1 = $("h1").clone(); // h1태그의 모든 것을 통째로 복사
+				$("p").append(h1); // p태그에 h1태그의 모든 요소 추가
+				$("h2").append(h1);
+				$("h1").insertBefore("h3"); // h1태그를 h3앞으로 이동시켜 삽입
+				$("p").remove(); // 자기 자신을 삭제
+				$("ul").empty(); // 자식들을 삭제 */
+				$("#button").click(function() { // 버튼 클릭시 함수 실행 (callback함수 형식) 
+					var id = $("#id").val(); // 아이디가 id인 입력칸의 value 값 가져오기					
+					if(id.length < 5) { // id.length: id라는 변수 값의 길이 구하기
+						alert("아이디는 5글자 이상을 입력해야 합니다.");
+						return false; // 안 넘김
+					}
+					var pw = $("#pw").val(); // 비밀번호 체크 
+					if(pw.length < 4) { // or연산: ||, and연산: &&
+						alert("비밀번호는 4글자 이상을 입력해야 합니다.");
+						return false;
+					}
+					var name = $("#name").val();
+					if(name is null){
+						return false;
+					}
+					var saveID = "rooot";
+					var savePW = "1234";
+					if(id != saveID || pw != savePW){
+						alert("아이디나 비밀번호가 잘못 입력되었습니다.")
+						return false;
+					}
+					alert("로그인 되었습니다.");
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<ul>
+			<li>감자</li>
+			<li>고구마</li>
+		</ul>
+		<h1>회원가입 화면</h1>
+		<h2>나는 h2</h2>
+		<h3>나는 h3</h3>
+		<!-- form: action에 써있는 주소로 입력 내용 전송, method에 전송 방식 지정(get:노출, post:숨김)-->
+		<form action="member.jsp" method="get">
+			회원ID: <input id="id" type="text" name="id" autofocus="autofocus" placeholder="아이디는 5글자 이상"><br> <!-- type="text": 입력칸 -->
+			회원PW: <input id="pw" type="password" name="pw" placeholder="비밀번호는 4글자 이상"><br> <!-- id값은 제이쿼리에서 사용 -->
+			회원NAME: <input id="name" type="text" name="name" required="required" placeholder="김치킨"><br> <!-- name 값은 파이썬(받는곳)에서 사용 -->
+			회원TEL: <input id="tel" type="text" name="tel" placeholder="010-1234-5678"><br>
+			<input id="button" type="submit" value="회원가입 완료"> <!-- submit:버튼 -->
+		</form>
+		<p>나는 p태그의 내용</p> 
+	</body>
+</html>

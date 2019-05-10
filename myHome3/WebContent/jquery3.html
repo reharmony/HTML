@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="EUC-KR">
+		<title>Insert title here</title>
+		<script type="text/javascript" src="jquery-3.4.1.min.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				var hos = $("img").attr("src");// img 태그의 src 속성을 가져와라
+				console.log(hos); // 콘솔에 hos값 출력
+				$("img").attr("src", "img/chicken.jpg"); // img태그의 src속성 값을 ""로 변경해라.
+				$("img").attr("title", "치킨이다!"); // 툴팁내용
+				var imsi = $("[href]").text(); // href 속성을 가진 태그의 내용 모두 가져오기
+				console.log(imsi);
+				var imsi2 = $("a[href='abc.html']").text();
+				console.log(imsi2);
+		/* 		$("img").css("transform", "rotate(99999deg)");
+				$("img").css("transition", "all 100s"); */
+				$("h1").text("나로 바뀌어요"); // text()에 입력값이 없으면 값을 select 입력값이 있으면 값을 update
+				h1text = $("li:eq(0)").text();
+				$("h1").css("background-color", "yellow");
+				$("li:eq(1)").text(h1text); // li:eq(숫자) -> 리스트 순서 선택자: 0부터 시작
+				$("li:eq(0)").text("우유").css("color", "green"); 
+				$("li:eq(2)").text("딸기").css("color", "red");
+			});
+		</script>
+	</head>
+	<body>
+		<a href="http://www.naver.com">자주 사용하는 포털</a><br><br><br>
+		<a href="abc.html">자주 사용하는 포털2</a><br><br><br>
+		<img src="img/hos.jpg"><br><br><br>
+		<h1>우리집 냉장고</h1>
+		<ul>
+			<li>감자</li>
+			<li>고구마</li>
+			<li>양파</li>
+		</ul>
+	</body>
+</html>

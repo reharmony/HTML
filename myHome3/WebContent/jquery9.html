@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript" src="jquery-3.4.1.min.js"></script>
+		<script type="text/javascript">
+			$(function() { // DOM 트리 읽어오기
+				$("#button1").click(function() { // 버튼 클릭시
+					alert("버튼 1을 클릭하셨군요.")					
+				});
+				
+				$("#button2").click(function() { // 버튼 클릭시
+					alert("버튼 2를 클릭하셨군요.")					
+				});
+				
+				$("#button2").mouseover(function() { // 버튼 위에 마우스 올릴 때
+					alert("어따대고")					
+				});
+
+				$("#button2").mouseout(function() { // 마우스가 버튼을 벗어날 때
+					alert("어디가")					
+				});
+				
+				$("#focus").focus(function() {	// tab키로 포커스가 해당 칸으로 옮겨졌을 때
+					console.log($(this).val()) // this: 파이썬에서 self 같은 역할
+				});
+				
+				$("#you").keydown(function() { // 키보드를 눌렀을 경우
+					alert("키를 누르셨군요.")
+				});
+			
+				$("#me").keyup(function() { // 키보드에서 손을 뗄 경우
+					alert("키에서 손을 떼셨군요.")
+				});
+			});
+		</script>
+	</head>
+	<body>	
+		<input id="button1" type="submit" value="나를 눌러요">
+		<input id="button2" type="submit" value="나도 눌러요">
+		<input id="focus" type="text" value="내가 포커스...">
+		<input id="you" placeholder="Keydown테스트">
+		<input id="me" placeholder="Keyup테스트">
+	
+		<h3></h3>
+	</body>
+</html>
