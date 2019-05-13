@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery-3.4.1.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		//외부 사이트와 통신
+		$("#btn").on("click", function(){
+			$.ajax({ // ajax를 이용한 외부 사이트 통신
+				url: "dataset.json", // 대상 파일 주소
+				dataType:"json", // 파일 형식
+				success: function(result) { // 성공시: i는 인덱스값(json만 있음), result는 임의의 변수명
+// 					alert("json이 있는 사이트 연결 성공!!"); // 안내 팝업 메세지 출력					
+					var list = result;					
+					if(list.length > 0){
+						$(list).each(function(i,person){
+							var id = person.id;
+							var first_name = person.first_name;
+							var last_name = person.last_name;
+							var email = person.email;
+							var gender = person.gender;
+							$("#id").val(id);
+							$("#first_name").val(first_name);
+							$("#last_name").val(last_name);
+							$("#email").val(email);
+							$("#gender").val(gender);
+							var data1 = $("#test").serialize();
+							$.ajax({
+								url: "jsonTest2.jsp",
+								type: "post",
+								data: data1,
+								success: function (result) {
+									alert(data1);
+								}
+							})
+						});
+					}
+				}
+			});
+		});
+	});
+</script>
+</head>
+<body>
+	<button type="button" id="btn">나를 눌러요</button>
+	<h1 id="txt1"></h1>
+	<form action="jsonTest.jsp" id="test" method="post">
+		<input type="text" id="id" name="id"><br>
+		<input type="text" id="first_name" name="first_name"><br>
+		<input type="text" id="last_name" name="last_name"><br>
+		<input type="text" id="email" name="email"><br>
+		<input type="text" id="gender" name="gender"><br>
+	</form>
+</body>
+</html>

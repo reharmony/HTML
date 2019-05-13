@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>조선일보 RSS</title>
+<style type="text/css">
+	#b1 {
+			top: 5px;
+			left: 5px;
+			position: fixed; /* 스크롤 움직여도 고정 */
+			text-align: left;		
+		}
+		
+	#b2 {
+			top: 5px;
+			left: 60px;
+			position: fixed; /* 스크롤 움직여도 고정 */
+			text-align: left;
+		}
+		
+	#b3 {
+			top: 5px;
+			left: 140px;
+			position: fixed; /* 스크롤 움직여도 고정 */
+			text-align: left;		
+		}
+</style>
+<script type="text/javascript" src="jquery-3.4.1.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$("#b1").click(function() { // 속보 연결
+			$.ajax({
+				url: "https://api.rss2json.com/v1/api.json?rss_url=http%3A%2F%2Fwww.chosun.com%2Fsite%2Fdata%2Frss%2Frss.xml&api_key=h3iwtogea0uiip5fct3pqpr5bucyccbs5euu0g1v",
+				dataType: "json",
+				data: { // 서버로 전송되는 값
+					url: "http://www.chosun.com/site/data/rss/rss.xml",
+					api_key: "h3iwtogea0uiip5fct3pqpr5bucyccbs5euu0g1v",
+					count: 20
+				}, // data{}뒤에 쉼표 붙이는거 주의!!
+				success: function(result) {
+// 					alert("조선일보 속보 사이트 연결 성공...!!")
+					$("#result").empty(""); // 기존데이터 삭제
+					for(i = 0; i < 20; i++){
+						var title = result.items[i].title; // 기사 제목
+						var link = result.items[i].link; // 기사 링크
+						var thumbnail = result.items[i].thumbnail; // 기사 썸네일
+						$("#result").append("<br><br><a href=" + link + "><font color=red>" + title + "</font></a><br>"); // 기사제목에 바로 링크 달기
+						if (thumbnail==""){ // 썸네일이 없는 경우
+							$("#result").append("<img width=100 height=100 src=nothumb.png><br>"); // 기사 썸네일 표시	
+						}
+						else { // 썸네일이 있는 경우
+							$("#result").append("<img width=100 height=100 src=" + thumbnail + "><br>"); // 기사 썸네일 표시						
+						}
+					}
+				}
+			});
+		});
+		
+		$("#b2").click(function() { // 인기뉴스 연결
+			$.ajax({
+				url: "https://api.rss2json.com/v1/api.json?rss_url=http%3A%2F%2Fnewsplus.chosun.com%2Fhitdata%2Fxml%2Fnewsplus%2Findex%2Findex.xml&api_key=h3iwtogea0uiip5fct3pqpr5bucyccbs5euu0g1v",
+				dataType: "json",
+				data: { // 서버로 전송되는 값
+					url: "http://newsplus.chosun.com/hitdata/xml/newsplus/index/index.xml",
+					api_key: "h3iwtogea0uiip5fct3pqpr5bucyccbs5euu0g1v",
+					count: 20
+				}, // data{}뒤에 쉼표 붙이는거 주의!!
+				success: function(result) {
+// 					alert("조선일보 인기뉴스 사이트 연결 성공...!!")
+					$("#result").empty(""); // 기존데이터 삭제
+					for(i = 0; i < 20; i++){
+						var title = result.items[i].title; // 기사 제목
+						var link = result.items[i].link; // 기사 링크
+						var thumbnail = result.items[i].thumbnail; // 기사 썸네일
+						$("#result").append("<br><br><a href=" + link + "><font color=red>" + title + "</font></a><br>"); // 기사제목에 바로 링크 달기
+						if (thumbnail==""){ // 썸네일이 없는 경우
+							$("#result").append("<img width=100 height=100 src=nothumb.png><br>"); // 기사 썸네일 표시	
+						}
+						else { // 썸네일이 있는 경우
+							$("#result").append("<img width=100 height=100 src=" + thumbnail + "><br>"); // 기사 썸네일 표시						
+						}
+					}
+				}
+			});
+		});
+		
+		$("#b3").click(function() { // 국제뉴스 연결
+			$.ajax({
+				url: "https://api.rss2json.com/v1/api.json?rss_url=http%3A%2F%2Fwww.chosun.com%2Fsite%2Fdata%2Frss%2Finternational.xml&api_key=h3iwtogea0uiip5fct3pqpr5bucyccbs5euu0g1v",
+				dataType: "json",
+				data: { // 서버로 전송되는 값
+					url: "http://www.chosun.com/site/data/rss/international.xml",
+					api_key: "h3iwtogea0uiip5fct3pqpr5bucyccbs5euu0g1v",
+					count: 20
+				}, // data{}뒤에 쉼표 붙이는거 주의!!
+				success: function(result) {
+// 					alert("조선일보 국제뉴스 사이트 연결 성공...!!")
+					$("#result").empty(""); // 기존데이터 삭제
+					for(i = 0; i < 20; i++){
+						var title = result.items[i].title; // 기사 제목
+						var link = result.items[i].link; // 기사 링크
+						var thumbnail = result.items[i].thumbnail; // 기사 썸네일
+						$("#result").append("<br><br><a href=" + link + "><font color=red>" + title + "</font></a><br>"); // 기사제목에 바로 링크 달기
+						if (thumbnail==""){ // 썸네일이 없는 경우
+							$("#result").append("<img width=100 height=100 src=nothumb.png><br>"); // 기사 썸네일 표시	
+						}
+						else { // 썸네일이 있는 경우
+							$("#result").append("<img width=100 height=100 src=" + thumbnail + "><br>"); // 기사 썸네일 표시						
+						}
+					}
+				}
+			});
+		});
+		
+	});
+</script>
+</head>
+<body>
+<button type="button" id="b1">속보</button>
+<button type="button" id="b2">인기뉴스</button>
+<button type="button" id="b3">국제뉴스</button>
+<div id="result">
+</div>
+</body>
+</html>

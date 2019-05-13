@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery-3.4.1.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		//외부 사이트와 통신
+		$("#form").on("submit", function(){
+			var data1 = $(this).serialize();
+			$.ajax({ // ajax를 이용한 외부 사이트 통신
+				url: "reply.jsp", // 대상 파일 주소
+				data: data1, // 파일 형식
+				success: function(result) { // 성공시 (result는 임의의 변수명)	
+					$("#total").append(result + "<br>");
+					$("#reply").title("d");
+				} // success
+			}); // ajax
+			return false;
+		}); // submit function
+	}); // 전체 function
+</script>
+</head>
+<body>
+	<h3>아래 이미지에 대한 느낌을 적어 주세요.</h3>
+	<img src="img/chicken.png" width="250"><br>
+	<form id="form">
+	입력 <input type="text" id="reply" name="reply">
+	<button type="submit">댓글달기</button>
+	</form>
+	<hr color="red">
+	<div id="total"></div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<result>
+	<item>
+		<time>breakfast</time>
+		<food>egg</food>
+		<foodimg>http://localhost:8888/myHome4/img/egg.jpg</foodimg>
+	</item>
+	<item>
+		<time>lunch</time>
+		<food>pizza</food>
+		<foodimg>http://localhost:8888/myHome4/img/pizza.jpg</foodimg>
+	</item>
+	<item>
+		<time>dinner</time>
+		<food>chicken</food>
+		<foodimg>http://localhost:8888/myHome4/img/chicken.png</foodimg>
+	</item>
+</result>
+ 

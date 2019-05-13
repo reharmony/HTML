@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery-3.4.1.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		//외부 사이트와 통신
+		$("#btn").on("click", function(){
+			$.ajax({ // ajax를 이용한 외부 사이트 통신
+				url: "rank.json", // 대상 파일 주소
+				dataType:"json", // 파일 형식
+				success: function(result) { // 성공시: i는 인덱스값(json만 있음), result는 임의의 변수명
+					alert("json이 있는 사이트 연결 성공!!"); // 안내 팝업 메세지 출력					
+					var list = result.rank;					
+					if(list.length > 0){
+// 						$("#txt1").text("추출 성공!!");
+						$(list).each(function(i,person){
+							var name = person['name'];
+							var tel = person['tel'];
+// 							var name = person.name; // person['name'] = person.name
+// 							var tel = person.tel; // 두 가지 모두 똑같음 편한거 쓰면 됨
+							var textResult = "<h1>" + name + "</h1><h1>" + tel + "</h1>";
+							$("body").append(textResult); // body태그 안에 결과값 출력
+						});
+					}
+				}
+			});
+		});
+	});
+</script>
+</head>
+<body>
+	<button type="button" id="btn">나를 눌러요</button>
+	<h1 id="txt1"></h1>
+	<form action="jsonTest.jsp" id="test" method="post">
+		<input type="text" id="name" name="name"><br>
+		<input type="text" id="tel" name="tel"><br>
+	</form>
+</body>
+</html>

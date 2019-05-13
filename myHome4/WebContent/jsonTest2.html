@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery-3.4.1.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		//외부 사이트와 통신
+		$("#btn").on("click", function(){
+			$.ajax({ // ajax를 이용한 외부 사이트 통신
+				url: "dataset.json", // 대상 파일 주소
+				dataType:"json", // 파일 형식
+				success: function(result) { // 성공시: result는 임의의 변수명
+					alert("json이 있는 사이트 연결 성공!!"); // 안내 팝업 메세지 출력					
+					var list = result; // 받아온 json형식 데이터를 list에 담기			
+					if(list.length > 0){ // 데이터가 존재한다면
+						$("#txt1").text("추출 성공!!");
+						$(list).each(function(i,person){ // i는 인덱스값(json만 있음), person은 임의의 변수명
+							var id = person.id;
+							var first_name = person.first_name;
+							var last_name = person.last_name;
+							var email = person.email;
+							var gender = person.gender;
+							var textResult = "<h1>" + id + "</h1><h1>" + first_name  + "</h1><h1>" + last_name + "</h1><h1>" + email + "</h1><h1>" + gender + "</h1>";
+							$("body").append(textResult);
+						});
+					}
+				}
+			});
+		});
+	});
+</script>
+</head>
+<body>
+	<button type="button" id="btn">나를 눌러요</button>
+	<h1 id="txt1"></h1>
+</body>
+</html>

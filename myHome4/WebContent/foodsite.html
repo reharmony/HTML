@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>오늘의 식사</title>
+<style type="text/css">
+	.foodtable {
+		text-align: center;
+	}
+</style>
+<script type="text/javascript" src="jquery-3.4.1.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	//외부 사이트와 통신
+		$.ajax({ // ajax를 이용한 외부 사이트 통신
+			url: "http://localhost:8888/myHome4/food2.json", // 대상 파일 주소
+			dataType:"json", // 파일 형식
+			success: function(result) { // 성공시: result는 임의의 변수명									
+				var list = result;	
+				$(list).each(function(i,food2){
+					var time = food2.time;						
+					var food = food2.food;
+					console.log(food);
+					var foodimg = food2.foodimg;
+					console.log(foodimg);					
+					$(".foodtable").append("<tr><td>" + time + "</td><td>" + food + "</td><td><img src=" + foodimg + " width=100></td></tr>");
+			});
+			
+		}
+	});
+});
+</script>
+</head>
+<body>
+<center>
+	<a href="food.json"></a>
+	<div width="500">
+		<table class="foodtable" border="1" width="500" >
+			<tr>
+				<td>식사시간</td>
+				<td>먹은음식</td>
+				<td>사진</td>			
+			</tr>					
+		</table>	
+	</div>	
+</center>
+</body>
+</html>

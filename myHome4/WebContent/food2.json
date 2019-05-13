@@ -1,0 +1,3 @@
+[{"time":"breakfast", "food":"egg","foodimg":"http://localhost:8888/myHome4/img/egg.jpg"},
+{"time":"lunch", "food":"pizza", "foodimg":"http://localhost:8888/myHome4/img/pizza.jpg"},
+{"time":"dinner", "food":"chicken", "foodimg":"http://localhost:8888/myHome4/img/chicken.png"}]
