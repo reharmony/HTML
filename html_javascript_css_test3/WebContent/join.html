@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>자동차 쇼핑몰 회원가입</title>
+<link rel="stylesheet" type="text/css" href="carsite.css"/> <!-- 외부 CSS파일 -->
+<script type="text/javascript" src="jquery-3.4.1.min.js"></script> <!-- 제이쿼리 -->
+<script type="text/javascript"> // 자바스크립트
+	$(function() { // DOM 트리 읽어오기		
+		$("#join_btn").click(function(){ // 회원가입 버튼 클릭시 실행 함수
+			var id = $("#id").val(); // 아이디
+			var pw = $("#pw").val(); // 비밀번호
+			var name = $("#name").val(); // 이름
+			var tel = $("#tel").val(); // 전화번호
+			var addr = $("#addr").val(); // 주소
+			if(id.length < 5){ // 입력 받은 id가 5자리 미만인 경우
+				alert("아이디는 5글자 이상이어야 합니다.");
+				return false;
+			} else if (id != "" && pw != "" && name != "" && tel != "" && addr != ""){ // 모든 항목이 입력된 경우 
+				alert("가입이 완료되었습니다.");				
+			} else { // 빈 항목이 있는 경우
+				alert("비어있는 항목이 존재합니다.");
+				return false;
+			}// else
+		}); // on submit function
+	}); // function
+</script>
+</head>
+<body>
+<center>
+<h1>회원가입</h1> <!-- 페이지 제목 -->
+<div id="menu" width="500"> <!-- 메뉴테이블 박스 -->
+	<table id="menu_table" width="500"> <!-- 메뉴테이블 -->
+		<tr>
+			<td>
+				<a href=index.html>메인페이지</a> <!-- 메인 페이지로 이동 -->
+			</td>		
+			<td>
+				<a href=regist.html>제품 등록</a> <!-- 제품등록 페이지로 이동 -->
+			</td>		
+			<td bgcolor="#dceef7"> <!-- 현재 페이지 표시 색상 -->
+				<a href=join.html>회원가입</a> <!-- 회원가입 페이지로 이동 -->
+			</td>		
+			<td>
+				<a href=login.html>로그인</a> <!-- 로그인 페이지로 이동 -->
+			</td>
+		</tr>	
+	</table>
+</div>
+<br><br>
+<div id="reg_div" width="500"> <!--회원가입 정보 입력 박스  -->
+	<form id="joinform" action="join.jsp" method="get"> <!-- 회원가입정보를 join.jsp로 전송하는 form -->
+		<table width="250"> <!-- 회원가입 정보 입력 테이블 -->
+			<tr>
+				<td>아이디</td> <!-- 아이디는 5글자 이상이라는 안내글, 페이지 로딩시 자동포커스  -->
+				<td><input type="text" id="id" name="id" placeholder="아이디는 5글자 이상" autofocus="autofocus"></td>
+			</tr>
+			<tr>
+				<td id="id_info" colspan="2"></td>	
+			</tr>
+			<tr>
+				<td>비밀번호</td>
+				<td><input type="password" id="pw" name="pw"></td>
+			</tr>			
+			<tr>
+				<td>이름</td>
+				<td><input type="text" id="name" name="name"></td>
+			</tr>			
+			<tr>
+				<td>전화번호</td> <!-- 전화번호 입력 형식 안내글 -->
+				<td><input type="tel" id="tel" name="tel" placeholder="010-1234-5678"></td>
+			</tr>			
+			<tr>
+				<td>주소</td>
+				<td><input type="text" id="addr" name="addr" ></td>
+			</tr>
+			<tr >
+				<td colspan="2" align="right">
+				<input type="submit" value="회원가입" id="join_btn" name="join_btn"></td> <!-- 회원가입 버튼 -->
+			</tr>
+		</table>
+	</form>
+</div>
+</center>
+</body>
+</html>

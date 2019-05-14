@@ -1,0 +1,52 @@
+@charset "UTF-8";
+
+#menu_table { /* 메뉴테이블 내부 가운데 정렬, 외부 테두리 제거 */
+	text-align: center;	
+	border-collapse: separate;
+}
+
+#menu_table td { /* 메뉴테이블 내부 td의 테두리 설정 */
+	border: solid 2px #76a5f2; 
+}
+
+#menu_table td:first-child { /* 메뉴테이블 맨 왼쪽 테두리 둥글게 */
+	border-radius: 10px 0px 0px 10px; 
+}
+
+#menu_table td:last-child { /* 메뉴테이블 맨 오른쪽 테두리 둥글게 */
+	border-radius: 0px 10px 10px 0px; 
+}
+
+a { /* 메뉴테이블의 하이퍼링크 색상 설정, 밑줄 제거 */
+	color: black;
+	text-decoration: none;
+}
+
+a:visited { /* 메뉴테이블의 방문한 하이퍼링크 색상 설정, 밑줄 제거 */
+	color: black;
+	text-decoration: none;
+}
+	
+#regist_complete { /* regist.jsp의 테이블 내부 가운데 정렬 */
+	text-align: center;
+}
+
+#regist_tr td { /* regist.jsp의 첫 행 색상 설정 */
+	background-color: #eeeeee;
+}
+
+#regist_tr td:nth-child(1) { /* regist.jsp의 이미지 출력칸 색상 설정 */
+	background-color: white;
+}
+
+#join_complete { /* join.jsp의 테이블 내부 가운데 정렬 */
+	text-align: center;
+}
+
+#join_tr td { /* join.jsp의 첫 행 색상 설정 */
+	background-color: #eeeeee;
+}
+
+#join_tr td:nth-child(1) { /* join.jsp의 이미지 출력칸 색상 설정 */
+	background-color: white;
+}

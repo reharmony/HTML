@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>자동차 쇼핑몰 제품등록</title>
+<link rel="stylesheet" type="text/css" href="carsite.css"/> <!-- 외부 CSS파일 -->
+<script type="text/javascript" src="jquery-3.4.1.min.js"></script> <!-- 제이쿼리 -->
+<script type="text/javascript"> // 자바스크립트 
+	$(function(){ // DOM 트리 읽어오기
+		$("#form").on("submit", function(){ // 등록버튼 클릭시 실행 함수
+			alert("제품등록이 완료되었습니다.")
+		}); // submit function
+	}); // 전체 function
+
+</script>
+</head>
+<body>
+<center>
+<h1>제품등록</h1> <!-- 페이지 제목 -->
+<div id="menu" width="500"> <!-- 메뉴테이블 박스 -->
+	<table id="menu_table" width="500"> <!-- 메뉴테이블 -->
+		<tr>
+			<td>
+				<a href=index.html>메인페이지</a> <!-- 메인 페이지로 이동 -->
+			</td>		
+			<td bgcolor="#dceef7">  <!-- 현재 페이지 표시 색상 -->
+				<a href=regist.html>제품 등록</a> <!-- 제품등록 페이지로 이동 -->
+			</td>		
+			<td>
+				<a href=join.html>회원가입</a> <!-- 회원가입 페이지로 이동 -->
+			</td>		
+			<td>
+				<a href=login.html>로그인</a> <!-- 로그인 페이지로 이동 -->
+			</td>
+		</tr>	
+	</table>
+</div>
+<br><br>
+<div id="reg_div" width="500"> <!-- 제품등록 입력칸 박스 -->
+	<form id="form" action="regist.jsp" method="get"> <!-- 입력내용 regist.jsp로 전송하는 form -->
+	<table width="250"> <!-- 제품등록 입력칸 테이블 -->
+		<tr>
+			<td>제품id</td> <!-- 페이지 로딩시 자동포커스, 필수항목, 5자리숫자라는 안내글 -->
+			<td><input type="text" id="pid" name="pid" autofocus="autofocus" required="required" placeholder="5자리 숫자"></td>
+		</tr>			
+		<tr>
+			<td>제품명</td>
+			<td><input type="text" id="pname" name="pname" required="required"></td>
+		</tr>			
+		<tr>
+			<td>제품가격</td>
+			<td><input type="text" id="pprice" name="pprice" required="required"></td>
+		</tr>			
+		<tr>
+			<td>제품내용</td>
+			<td><input type="text" id="pcontent" name="pcontent" required="required"></td>
+		</tr>			
+		<tr>
+			<td>제품회사</td>
+			<td><input type="text" id="pcompany" name="pcompany" required="required"></td>
+		</tr>
+		<tr >
+				<td colspan="2" align="right">
+				<input type="submit" value="등록" id="reg_btn" name="reg_btn"></td> <!-- 등록 버튼  -->
+			</tr>
+	</table>
+	</form>
+</div> 
+</center>
+</body>
+</html>

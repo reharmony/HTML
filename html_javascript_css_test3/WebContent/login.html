@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>자동차 쇼핑몰 로그인</title>
+<link rel="stylesheet" type="text/css" href="carsite.css"/> <!-- 외부 CSS파일 -->
+<script type="text/javascript" src="jquery-3.4.1.min.js"></script> <!-- 제이쿼리 -->
+<script type="text/javascript"> // 자바스크립트
+	var id = "carman" // 가입된 계정의 아이디
+	var pw = "1234" // 가입된 계정의 비밀번호
+		$(function() { // DOM 트리 읽어오기
+			$("#id").keyup(function() { // 아이디 입력칸에서 키를 뗄 경우 실행 함수
+				var input_id = $("#id").val();
+				if (input_id == id) { // 입력받은 id와 가입된 계정의 id가 일치할 경우
+					$("#id_info").css("color","green"); // 안내메세지의 색상을 녹색으로 변경
+					$("#id_info").css("text-align","right"); // 안내메세지를 오른쪽 정렬
+					$("#id_info").text("아이디가 일치합니다."); // 안내메세지 내용
+				} else { // 입력받은 id와 가입된 계정의 id가 일치하지 않을 경우
+					$("#id_info").css("color","red"); // 안내메세지의 색상을 빨간색으로 변경
+					$("#id_info").css("text-align","right"); // 안내메세지를 오른쪽 정렬
+					$("#id_info").text("아이디가 잘못되었습니다.");	// 안내메세지 내용
+				} // else
+			}); // #id function
+			$("#pw").keyup(function() { // 비밀번호 입력칸에서 키를 뗄 경우 실행 함수
+				var input_pw = $("#pw").val();
+				if (input_pw == pw) { // 입력받은 pw와 가입된 계정의 pw가 일치할 경우
+					$("#pw_info").css("color","green"); // 안내메세지의 색상을 녹색으로 변경
+					$("#pw_info").css("text-align","right"); // 안내메세지를 오른쪽 정렬
+					$("#pw_info").text("비밀번호가 일치합니다."); // 안내메세지 내용	
+				} else { // 입력받은 pw와 가입된 계정의 pw가 일치하지 않을 경우
+					$("#pw_info").css("color","red"); // 안내메세지의 색상을 빨간색으로 변경
+					$("#pw_info").css("text-align","right"); // 안내메세지를 오른쪽 정렬
+					$("#pw_info").text("비밀번호가 잘못되었습니다."); // 안내메세지 내용
+				} //else
+			}); // #pw function
+		}); // function
+</script>
+</head>
+<body>
+<center>
+<center>
+<h1>로그인</h1> <!-- 페이지 제목 -->
+<div id="menu" width="500"> <!-- 메뉴테이블 박스 -->
+	<table id="menu_table" width="500"> <!-- 메뉴테이블 -->
+		<tr>
+			<td>
+				<a href=index.html>메인페이지</a> <!-- 메인 페이지로 이동 -->
+			</td>		
+			<td>
+				<a href=regist.html>제품 등록</a> <!-- 제품등록 페이지로 이동 -->
+			</td>		
+			<td>
+				<a href=join.html>회원가입</a> <!-- 회원가입 페이지로 이동 -->
+			</td>		
+			<td bgcolor="#dceef7"> <!-- 현재 페이지 표시 색상 -->
+				<a href=login.html>로그인</a> <!-- 로그인 페이지로 이동 -->
+			</td>
+		</tr>	
+	</table>
+</div>
+<br><br>
+<div id="reg_div" width="500"> <!-- 로그인 입력칸 박스 -->
+	<form> <!-- 기능이 구현되지 않은 폼 -->
+		<table width="250"> <!-- 로그인 입력칸 테이블 -->
+			<tr>
+				<td>아이디</td>
+				<td><input type="text" id="id" name="id" ></td>
+			</tr>
+				<td id="id_info" colspan="2"></td> <!-- 아이디 검증 안내메세지 -->
+			<tr>
+			</tr>		
+			<tr>
+				<td>비밀번호</td>
+				<td><input type="password" id="pw" name="pw" ></td>
+			</tr>
+			<tr>
+				<td id="pw_info" colspan="2"></td> <!-- 비밀번호 검증 안내메세지 -->
+			</tr>					
+			<tr>
+				<td colspan="2" align="right">
+				<input type="submit" value="로그인" id="login_btn" name="login_btn"></td> <!-- 로그인 버튼 -->
+			</tr>
+		</table>
+	</form>
+</div> 
+</center>
+</body>
+</html>
